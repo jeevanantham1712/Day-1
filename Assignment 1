@@ -1,0 +1,23 @@
+Explain your understanding about Java?
+    Java is high level, object oriented programming language and it is open sourece and platorm independent run on any OS with JVM and java ensure security,robustness.
+What is the importance of main method in Java?
+    public static void main(String[] args)
+       (main) method is the starting point to the program and without this program will never get finished and while using this main method object creation is not neeeded because it has static in it.
+Write a program to print student details / employee details.
+package Program;
+public class Sample {
+	public static void main(String[] args) {
+		String StudentName="Jeeva";
+		int StudentRollNo=20;
+		String StudentSection="A";
+		String StudentDepartment="ECE";
+		System.out.println(StudentName+" "+ StudentRollNo+" "+StudentSection+" "+StudentDepartment);
+	}
+}
+How to Run a program in Eclipse IDE?
+  Open Eclipse
+  Create new java project
+  Create new class
+  Write the code 
+  Save and Run the code
+  will get the output in console in bottom.
