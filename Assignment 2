@@ -1,0 +1,133 @@
+Check if the number is even or odd using modulus and conditional operators
+package Program;
+import java.util.*;
+public class Sample1 {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int a=sc.nextInt();
+		System.out.println((a%2==0)?"even":"odd");
+    sc.close();
+	}
+}
+
+Write a program to calculate area of circle and print the result.
+package Program;
+import java.util.*;
+public class Sample2 {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int a=sc.nextInt();
+		float pi=3.14f;
+		float c=a*a*pi;
+		System.out.print(c);
+		sc.close();
+	}
+}
+
+Write a program which uses the arithmetic operators
+package Program;
+import java.util.*;
+public class Sample3 {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int a=sc.nextInt();
+		int b=sc.nextInt();
+		System.out.println("Addition of two numbers : "+(a+b));
+		System.out.println("Subtraction of two numbers : "+(a-b));
+		System.out.println("Multiplication of two numbers : "+(a*b));
+		System.out.println("Division of two numbers : "+(a/b));
+		System.out.println("Remainder o two numbers : "+(a%b));
+        sc.close();
+	}
+}
+
+Write a program to get the input about employee details and print
+package Program;
+import java.util.*;
+public class Sample4 {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String EmpName=sc.nextLine();
+		int EmpId= sc.nextInt();
+		sc.nextLine();
+		String EmpRoll=sc.nextLine();
+		String EmpFrom=sc.nextLine();
+		System.out.println(EmpName+" "+EmpId+" "+EmpRoll+" "+EmpFrom);
+        sc.close();
+	}
+
+}
+
+Explain the different types of variables using example program
+Types o variable:
+  * Local Variable
+  * Instance Variable
+  * Static variable
+  * Parameter variable
+Local Variable:
+  it can declared inside the method body and it is used only inside the method body.
+Example:
+  import java.util.*;
+class Main{
+    public void add(){
+        int a=10; // local variable
+        int b=20; // local variable
+        System.out.print(a+b);
+    }
+    public static void main(String[] args){
+        Main obj = new Main();  // object creation
+        obj.add(); // calling the method
+    }
+}
+Instance Variable:
+  it can be declared out side the method and inside the class.
+  it is a non static variable
+  it can be accessed only by object creation
+Example:
+ import java.util.*;
+class Main{
+    int a=10; // instance variable
+    int b=20; // instance variable
+    int c=30; // instance variable
+    public void add(){
+        System.out.print(a+b+c);
+    }
+    public static void main(String[] args){
+        Main obj = new Main();  // object creation
+        obj.add(); // calling the method    
+    }
+}
+Static Variable:
+  it can be declared out side the method and inside the class.
+  Static keyword is used.
+  object creation is not necessary.
+Example:
+import java.util.*;
+class Main{
+    static int c=30;  // static variable
+    public static void add(){ // static method
+        int a=10;
+        int b=20;
+        System.out.print(a+b);
+    }
+    public static void main(String[] args){
+        // object creation is not neccessary
+        System.out.print(Main.c); // calling static variable.
+        Main.add(); // calling static method.
+    }
+}
+Parameter Variable:
+  passing values to the methods.
+ import java.util.*;
+class Main{
+    public void add(int a,int b){
+        System.out.print(a+b);
+    }
+    public static void main(String[] args){
+        Main obj =new Main(); // object creation
+        obj.add(10,20); // passing parameter 
+       
+    }
+}
