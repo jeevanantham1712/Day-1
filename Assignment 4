@@ -1,0 +1,81 @@
+1) Write a program to reverse an array.
+package Program1;
+import java.util.*;
+public class Array1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+         Scanner sc=new Scanner(System.in);
+         int n=sc.nextInt();
+         int[] a= new int[n];
+         for(int i=0;i<n;i++) {
+        	 a[i]=sc.nextInt();
+         }
+         for(int i=n-1;i>=0;i--) {
+        	 System.out.print(a[i]+" ");
+         }
+         sc.close();
+	}
+}
+
+2) Sum all the elements in array
+package Program1;
+import java.util.*;
+public class Array2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int n=sc.nextInt();
+		int[] a = new int[n];
+		for(int i=0;i<n;i++) {
+			a[i]=sc.nextInt();
+		}
+		int sum=0;
+		for(int i=0;i<n;i++) {
+			sum=sum+a[i];
+		}
+		System.out.print("sum of all numbers : "+sum);
+		sc.close();
+	}
+}
+
+3) Find the maximum and minimum in an array.
+package Program1;
+import java.util.*;
+public class Array3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int n=sc.nextInt();
+		int[] a= new int[n];
+		for(int i=0;i<n;i++) {
+			a[i]= sc.nextInt();
+		}
+		int max=a[0];
+		for(int i=1;i<n;i++) {
+			if(max<a[i]) {
+				max=a[i];
+			}
+		}
+		System.out.println("max value : "+max);
+		int min=a[0];
+		for(int i=1;i<n;i++) {
+			if(min>a[i]) {
+				min=a[i];
+			}
+		}
+		System.out.println("min value : "+min);
+		sc.close();
+	}
+}
+
+4) What is the difference between for loop and for-each loop? Which looping statement best  suits for accessing array elements and why?
+For loop:
+ * Use index to access element
+ * allow increment,decrement
+For each loop:
+ * Does not use index.
+ * directly access the array element
+For each loop best suits for accessing array element which avoid error in indexing.
