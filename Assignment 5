@@ -1,0 +1,95 @@
+1) Create a Student class and display the details of students using Object.
+package Program1;
+import java.util.*;
+class Student{
+	public void name(String a) {
+		System.out.println("Student name is : "+a);	
+	}	
+	public int RollNo(int b) {
+		return b;
+	}
+	public void Depart(String c) {
+		System.out.println("Student department is : "+c);
+	}
+	String Place(String d) {
+		return d;
+	}
+}
+public class ClsName {
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		Student obj = new Student();      
+		String a=sc.nextLine();           
+		int b=sc.nextInt();              
+		sc.nextLine();
+		String c=sc.nextLine();
+		String d=sc.nextLine();
+		obj.name(a);                     
+		int z=obj.RollNo(b);
+		System.out.println("Student roll.no is : "+z);
+		obj.Depart(c);
+		System.out.println("Student place is : "+obj.Place(d));
+		sc.close();
+	}
+}
+
+2. Create a parameterized constructor for Transport and display the details.
+package Program1;
+import java.util.*;
+class Transport {
+	Transport(String colour,String wheel,int model){
+		System.out.println("Colour of transport is : "+colour);
+		System.out.println("Wheel of the transport is : "+wheel);
+		System.out.println("Model o the transport is : "+model);
+	}
+}
+public class ParCons {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String colour =sc.nextLine();
+		String wheel = sc.nextLine();
+		int model = sc.nextInt();
+		Transport obj = new Transport(colour,wheel,model);
+		sc.close();
+	}
+}
+
+3) Write a program to simulate a Bank account with Deposit and Withdraw methods.
+package Program1;
+import java.util.*;
+class Account{
+	private String username;
+	private int password;
+	private int accnumber;
+	public void setname(String name) {
+		username=name;
+	}
+	public void setpass(int passcode) {
+		password=passcode;
+	}
+	public void setaccnumber(int accountnum) {
+		accnumber=accountnum;
+	}
+	void show() {
+		System.out.println("Enter your UserName : "+username);
+		System.out.println("Enter the password : "+password);
+		System.out.println("Enter the Account Number : "+accnumber);
+	}
+}
+public class BankAcc {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Account obj = new Account();
+		String name = sc.nextLine();
+		int passcode = sc.nextInt();
+		int accountnum = sc.nextInt();
+		obj.setname(name);
+		obj.setpass(passcode);
+		obj.setaccnumber(accountnum);
+		obj.show();	
+		sc.close();
+	}
+}
