@@ -1,0 +1,105 @@
+1. What is Method Overloading? Write a program to demonstrate about Method Overloading
+Method overloading is the concept where two methods have same name but different parameter.
+Example Program:
+import java.util.*;
+class Program{
+   void Print(String a,String b,int c){     
+    System.out.println("Name : "+a+" "+"Course : "+b+" "+"RollNo : "+c);
+}
+  void Print(int c){
+    System.out.println("Index No : "+c);
+}
+}
+class Main{
+public static void main (String[] args){
+   Scanner sc = new Scanner(System.in);
+   String a = sc.nextLine();
+   String b = sc.nextLine();
+   int c= sc.nextInt();
+   Program obj = new Program();
+   obj.Print(a,b,c);
+   obj.Print(c);
+}
+}
+
+2. What is Method Overriding? Write example program for the same.
+Method overriding is the concept that a subclass provide the implementation of the method that is already present Parent class. 
+it uses @ annotation to describe mentod is overridded.
+Example Program:
+import java.util.*;
+class Parent{
+void Print(){
+System.out.println("Printing....");
+}
+}
+class Child extends Parent{
+@Override
+void Print(){
+System.out.println("Not Printing....");
+}
+}
+class Main{
+public static void main (String[] args){
+Scanner sc= new Scanner(System.in);
+Child obj = new Child();
+obj.Print();
+}
+}
+
+3. What is Inheritance? Explain with example program
+Inheritance is a mechanism in java by which one class is inherited by other class.
+it has Parent and child relation and extends keyword is used to join this two classes.
+Uses:
+ code reusabilty.
+Example Program:
+import java.util.*;
+class Animal{
+ void bark(){
+System.out.println("not barking...");
+}
+}
+class Dog extends Animal{
+   void bark(){
+System.out.println("barking....");
+}
+}
+class Cat extends Animal{
+void eat(){
+System.out.println("eating....");
+}
+
+}
+class Main{
+public static void main(String[] args){
+Animal obj2 =new Animal();
+obj2.bark();
+Dog obj = new Dog();
+Cat obj1 = new Cat();
+obj.bark();
+obj1.eat();
+}
+}
+
+4. Explain about constructor overloading with example
+Constructor overloading is nothing but at the time object creation we are providing the different paramenter with same constructor name.
+Example:
+import java.util.*;
+class Parent{
+Parent(String a,String b){
+System.out.println("Name : "+a+" "+"Place : "+b);
+}
+Parent(int c){
+System.out.println("RollNo : "+c);
+}
+}
+class Main{
+public static void main(String[] args){
+Scanner sc = new Scanner(System.in);
+String a=sc.nextLine();
+String b=sc.nextLine();
+int c=sc.nextInt();
+Parent obj=new Parent(a,b);
+Parent obj1=new Parent(c);
+}
+}
+
