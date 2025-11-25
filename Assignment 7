@@ -1,0 +1,89 @@
+1. Write a program to access a method and variable without creating object. Explain the steps
+We are creating a method and variable and we are calling them without object creation because o using satic keyword in it.
+package Program1;
+import java.util.*;
+class Students{ 
+	static int a; // static variable
+	public static void PrintName(String Name) {    //method called and executed
+		System.out.println("Your name is : "+Name);
+	}
+	public static String ShowDepartment(String Department) { //we are using return type as string so it will return string value.
+		return Department;
+	}
+}
+public class WithoutObj {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);	
+		String Name = sc.nextLine();    // getting input from the user
+		String Department = sc.nextLine();
+		Students.a = sc.nextInt(); 
+		Students.PrintName(Name);   // calling the method using class name
+		System.out.println("Your Department is : "+Students.ShowDepartment(Department));
+		System.out.println("Your Roll No is : "+Students.a);  // printing the static variable.
+			sc.close();
+	}
+}
+
+2. Write a program to implement abstract class and method
+package Program1;
+import java.util.*;
+abstract class Parent {
+    abstract void Name(String name);
+    abstract void PassWord(int passcode);
+}
+class Child extends Parent {   
+    void Name(String name) {
+        System.out.println("Your name is : " + name);
+    }
+    void PassWord(int passcode) {
+        System.out.println("Your Passcode is : " + passcode);   
+    }
+}
+class Abstraction {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String name = sc.nextLine();
+        int passcode = sc.nextInt();
+        Child obj = new Child();
+        obj.Name(name);
+        obj.PassWord(passcode);
+        sc.close();
+    }
+}
+
+3. What is Multiple Inheritance? Explain with examples.
+Multiple inheritance is a OOPs concept which is achieved by interface concept because java doesnot provide multiple inheritance due to ambiguity.
+import java.util.*;
+interface InterfaceProgram {
+    void dog(); 
+    void cat();
+    default void snake() { 
+        System.out.println("shhhhh...");
+    }
+}
+interface InterfaceProgram1 {
+    void tiger();
+}
+class Child implements InterfaceProgram, InterfaceProgram1 {
+    public void dog() { 
+        System.out.println("Barking...");
+    }
+    
+    public void cat() {
+        System.out.println("meowww...");
+    }
+    
+    public void tiger() {
+        System.out.println("hororr....");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Child obj = new Child();
+        
+        obj.dog();
+        obj.cat();
+        obj.snake();
+        obj.tiger();
+    }
+}
