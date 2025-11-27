@@ -34,4 +34,17 @@ public class SetProgram {
 	}
 }
 
-3.Write a program to store the elements in Map <String,String> and print the elements
+3.Write a program to store the elements in Map <String,String> and print the elements.
+
+package Program1;
+import java.util.*;
+public class MapProgram {
+	public static void main(String[] args) {
+		HashMap<String,String> map =new HashMap<>();
+		map.put("1","Arun");
+		map.put("2","Balu");
+		map.put("3","geetha");
+		System.out.println(map);	
+	}
+}
+
