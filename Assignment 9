@@ -1,0 +1,37 @@
+1. Write a program to print the elements from List using normal for loop.
+package Program1;
+import java.util.*;
+public class ListForLoop {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc= new Scanner(System.in);
+		int n = sc.nextInt();
+		ArrayList<Integer> arr = new ArrayList<>(n);
+		for(int i=0;i<n;i++) {
+			arr.add(sc.nextInt());
+		}
+		for(int i=0;i<n;i++) {
+			System.out.println(arr.get(i));
+		}
+		sc.close();
+	}
+}
+
+2. Write a program to store the elements in Set and print by sorting order.
+
+package Program1;
+import java.util.*;
+public class SetProgram {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		TreeSet<Integer> set =new TreeSet<>();
+		for(int i=0;i<n;i++) {
+			set.add(sc.nextInt());
+		}
+		System.out.println(set);
+	}
+}
+
+3.Write a program to store the elements in Map <String,String> and print the elements
