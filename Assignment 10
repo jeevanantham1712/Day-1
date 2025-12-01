@@ -1,0 +1,22 @@
+1) Explain about Selenium Architecture
+Selenium is a architecture designed to facilitate automated interaction with web browsers. 
+Working Flow:
+  Selenium library --> w3c protocol --> Browser driver --> real browser(using http).
+
+2)Write a program to open website (https://www.saucedemo.com/) and close the browser after priniting a message like "Site navigation success"
+package practiceselenium;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class seldayone {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.saucedemo.com");
+		System.out.println("Site navigation success");
+		driver.close();
+	}
+}
+
