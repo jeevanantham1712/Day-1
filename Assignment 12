@@ -1,0 +1,58 @@
+What is the difference between driver.get () and driver.navigate()?
+driver.get():
+it is used to initalise the navigation.
+it does not maintain any history.
+driver.navigate():
+it is part of navigation and provide more flexiable navigation.
+it maintains the history like it can move navigate().forward(), navigate().back() etc...
+
+2. Write a program to display result as pass or fail based on title
+package practiceselenium;
+import java.util.*;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebDriver;
+public class result {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		WebDriver driver =new ChromeDriver();
+		driver.get("https://www.google.com");
+		String Title_Result = driver.getTitle();
+		String Exepected = "Google";
+		if(Title_Result.equals(Exepected)) {
+			System.out.println("Pass");
+		}
+		else
+		{
+			System.out.println("Fail");
+		}
+		
+	}
+
+}
+
+
+3. Write a program to display a site in iPhone 6 screen size
+
+package practiceselenium;
+
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.WebDriver;
+
+public class Iphonesize {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver driver = new ChromeDriver();
+		Dimension d = new Dimension(375,667);
+		driver.manage().window().setSize(d);
+		driver.get("https://www.google.com/");
+		System.out.println("Site displayed in iPhone 6 screen size.");
+		
+
+	}
+
+}
+
