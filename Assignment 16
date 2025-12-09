@@ -1,0 +1,48 @@
+1) Navigate to https://www.hyrtutorials.com/p/waits-demo.html. Write a program to click "Add Textbox1" and check that the button got disabled or not after 5secs.
+
+package practiceselenium;
+import java.time.Duration;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class SyncAssignment {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		JavascriptExecutor js;
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.hyrtutorials.com/p/waits-demo.html");
+		driver.manage().window().maximize();
+		js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,300)");
+		WebElement element = driver.findElement(By.id("btn1"));
+		element.click();
+		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
+        WebElement txt1 = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("txt1")));
+        boolean is = element.isDisplayed();
+        if (is) {
+            System.out.println("Button is disabled after 5 seconds");
+        } else {
+            System.out.println("Button is not disabled after 5 seconds");
+        }
+	}
+}
+
+2)Explain the difference between Wait and Thread.sleep().
+
+Thread.sleep():
+
+Always waits the full time
+Not recommended
+Makes tests slow
+
+Selenium Wait:
+
+Waits only till the condition becomes true
+Smart and dynamic
+Recommended for real-time automation
