@@ -1,0 +1,33 @@
+1)Navigate to the site https://www.hyrtutorials.com/p/basic-controls.html and Register after filling all the required details.
+package practiceselenium;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class PracticeRegister {
+
+	public static void main(String[] args) {
+	
+		JavascriptExecutor js;
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.hyrtutorials.com/p/basic-controls.html");
+		driver.manage().window().maximize();
+		js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,600)");
+		WebElement element = driver.findElement(By.id("firstName"));
+		element.sendKeys("Jeevananatham");
+	    WebElement element1 = driver.findElement(By.id("lastName"));
+		element1.sendKeys("G");
+		WebElement element2 = driver.findElement(By.id("englishchbx"));
+	    element2.click();
+	    WebElement element3 = driver.findElement(By.id("email"));
+	    element3.sendKeys("jeevanantham@gmail.com");
+	    WebElement element4 = driver.findElement(By.id("password"));
+	    element4.sendKeys("Pass123");
+	    WebElement element5 = driver.findElement(By.id("registerbtn"));
+	    element5.click();
+	    
+	}
+}
