@@ -1,0 +1,52 @@
+1)Select any of the country from "Country selection" dropdown ( https://practice.expandtesting.com/dropdown) and print the result in console.
+package practiceselenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class dropDownElement {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://practice.expandtesting.com/dropdown");
+		JavascriptExecutor js =(JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,300)");
+		WebElement element =driver.findElement(By.cssSelector("select[id='country']"));
+		Select s = new Select(element);
+		s.selectByVisibleText("India");
+		String printelement = s.getFirstSelectedOption().getText();
+		System.out.println(printelement);
+
+	}
+
+}
+
+2)Switch to the Alert and print the text inside that Alert (https://demo.automationtesting.in/Alerts.html).
+
+package practiceselenium;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class AlertAssignment {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://demo.automationtesting.in/Alerts.html");
+		WebElement element =driver.findElement(By.xpath("//button[@onclick='alertbox()']"));
+		element.click();
+		Alert al = driver.switchTo().alert();
+		System.out.println(al.getText());
+		al.accept();
+	}
+}
+
