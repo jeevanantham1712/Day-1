@@ -1,0 +1,19 @@
+1)Write Xpath to find the buttons in https://www.tutorialspoint.com/selenium/practice/alerts.php
+(//button[@onclick='showAlert()'])
+(//button[text()='Click Me'])[1]
+(//button[text()='Click Me'])[2]
+(//button[text()='Click Me'])[3]
+
+2)Write CSS Selector for the elements in https://www.tutorialspoint.com/selenium/practice/selenium_automation_practice.php
+input[name='firstname']    
+input[id='email']
+input[id='gender']
+input[id='mobile']
+input[id='dob']
+input[id='subjects']
+input[id='hobbies']
+input[id='picture']
+textarea[id='picture']
+select[id='state']
+select[id='city']
+input[type='submit']
