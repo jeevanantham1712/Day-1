@@ -1,0 +1,59 @@
+1. Click on "Open New Seperate Windows" button from (https://demo.automationtesting.in/Windows.html) and 
+switch to new window. Print the new window URL or Title, if it matches with expected print "Pass" else "Fail".
+
+package practiceselenium;
+
+import java.util.*;
+import java.util.List;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class WindowAssignment {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        WebDriver driver = new ChromeDriver();
+        driver.get("https://demo.automationtesting.in/Windows.html");
+        driver.findElement(By.linkText("Open New Seperate Windows")).click();
+        driver.findElement(By.xpath("//button[@onclick = 'newwindow()']")).click();
+        Set<String> handle = driver.getWindowHandles();
+        List<String> hand = new ArrayList<>(handle);
+        driver.switchTo().window(hand.get(1));
+        String get_url = driver.getCurrentUrl();
+        System.out.println(get_url);
+        if(get_url.equalsIgnoreCase("https://www.selenium.dev/")) {
+        	System.out.println("Pass");
+        }
+        else {
+        	System.out.println("Fail");
+        }     
+	}
+}
+
+2) Navigate to https://www.selenium.dev/selenium/web/alerts.html and click on "prompt with default happen".
+Switch to that Alert, type a message and print the same in console.
+
+package practiceselenium;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class alertAssignment1 {
+
+	public static void main(String[] args) {
+		
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.selenium.dev/selenium/web/alerts.html");
+		driver.findElement(By.xpath("//a[@onclick='displayPromptWithDefault();']")).click();
+		Alert alert = driver.switchTo().alert();
+		String msg ="Hello";
+		alert.sendKeys(msg);
+		System.out.println(msg);
+	}
+
+}
