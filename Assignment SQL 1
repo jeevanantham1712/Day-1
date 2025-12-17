@@ -1,0 +1,5 @@
+1. Which SQL command is used to display all the DB in mysql ?
+SHOW DATABASES;
+
+2. How do you get the details of datatypes in a table ?
+DESCRIBE table_name;
