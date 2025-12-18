@@ -1,0 +1,24 @@
+Create a DB named as Shopping and Create Table as Delivery. The table should contain User_id,Shipping_id,Shipping_Address,Total_Price. Insert 10 records at once. Apply constrains for all the column.
+Display the records using inserted query.
+
+create database shopping;
+use shopping;
+create table Delivery(
+  User_id int primary key,
+  Shipping_id int unique,
+  Shipping_Address varchar(20) not null,
+  Total_Price float default 0.0
+);
+insert into Delivery values
+    (1,1245,'Velachery',99.52),
+    (2,1246,'Guindy',105),
+    (3,1247,'Pallavaram',109.4),
+    (4,1248,'KK Nagar',120.5),
+    (5,1249,'Nesapakam',160.7),
+    (6,1250,'tamabaram',187.0),
+    (7,1251,'Chennai',199.2),
+    (8,1252,'ECR',142),
+    (9,1253,'DLF',148.0),
+    (10,1254,'Pallikaranai',973.2);
+    
+select * from Delivery;
