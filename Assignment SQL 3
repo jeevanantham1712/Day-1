@@ -1,0 +1,36 @@
+1. Create a College Table with columns like College Name,College Code,Courses,No of students per course. 
+Insert values as needed. Write a query to get College Name which has "Mechatronics" course and also no of students  not lesser than 100.
+
+create database College;
+use college;
+create table college(
+    CLG_NAME varchar(30) not null,
+    CLG_CODE int primary key,
+    CLG_course varchar(10) not null,
+    CLG_std int
+);
+desc college;
+insert into college values
+('SKCET',1099,'Mechtronics',10),
+('SKCT',1098,'ECE',20),
+('SRM',1097,'CSE',30),
+('PSG',1096,'EEE',40);
+insert into college values('AGS',1093,'Mechtronics',120);
+select * from college 
+where ClG_course = 'Mechtronics' and CLG_std >= 100;
+
+2. Create a Shopping table and get the details of product which contains 500gms pack.
+
+create table shopping(
+  Product_details Varchar(30) primary key,
+  Product_quantity int 
+);
+desc shopping;
+insert into shopping values('moong dal',500),
+('horse gram',1),
+("green gram",5),
+("white chana",500),
+('black pepper',2 ),
+('jeera',500);
+
+select * from shopping where product_quantity ='500';
