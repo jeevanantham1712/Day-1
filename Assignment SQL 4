@@ -1,0 +1,55 @@
+1.Create table Orders, insert values into it with product details and price, Apply the aggregate functions and display the results.
+create database orders;
+
+use orders;
+
+CREATE TABLE Orders (
+    order_id INT AUTO_INCREMENT PRIMARY KEY,
+    product_name VARCHAR(100),
+    category VARCHAR(50),
+    quantity INT,
+    price DECIMAL(10,2)
+);
+INSERT INTO Orders (product_name, category, quantity, price) VALUES
+('Laptop', 'Electronics', 2, 55000.00),
+('Mobile', 'Electronics', 5, 15000.00),
+('Headphones', 'Accessories', 10, 2000.00),
+('Keyboard', 'Accessories', 7, 1200.00),
+('Mouse', 'Accessories', 12, 800.00);
+
+select * from orders;
+
+select count(quantity) from orders
+where category = 'Accessories';
+
+select max(price) from orders;
+
+select min(price) from orders;
+
+2. Create table for Shipping, insert values which contains products, category, price. Group the table by category and display the result.
+
+create database shippings;
+
+use shippings;
+
+CREATE TABLE Shippings (
+    shipping_id INT AUTO_INCREMENT PRIMARY KEY,
+    product_name VARCHAR(100),
+    category VARCHAR(50),
+    price DECIMAL(10,2)
+);
+
+INSERT INTO Shippings (product_name, category, price) VALUES
+('Car Tyre', 'Automobile', 6500.00),
+('Car Battery', 'Automobile', 8500.00),
+('Engine Oil', 'Automobile', 3200.00),
+('Car Seat Cover', 'Automobile', 4500.00),
+('Car Air Freshener', 'Automobile', 600.00);
+
+select count(product_name) from shippings;
+
+select avg(price) from shippings;
+
+select sum(price) from shippings;
+
+
