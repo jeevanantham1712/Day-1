@@ -1,0 +1,11 @@
+1. Use string function to perform the following:
+     Take 2 variables one for Language and 1 variable for Tamil.
+     The result should display as "LANGUAGE: Tamil"
+
+SET @lan1 = 'Language';
+SET @tam1 = 'Tamil';
+
+SELECT CONCAT(UPPER(@lan1), ': ', @tam1) AS Result;
+
+2. Extract the day,month & year from today's date and print it in seperate columns like DAY, MONTH and YEAR
+SELECT DAY(CURDATE())   AS DAY,MONTH(CURDATE()) AS MONTH,YEAR(CURDATE())  AS YEAR;
