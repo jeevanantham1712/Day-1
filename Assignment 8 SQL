@@ -1,0 +1,28 @@
+1.Write a single SQL statement which should display window function like SUM,MAX,MIN,Rank .
+CREATE TABLE ORDERS(
+  PROD_ID INT PRIMARY KEY,
+  PROD_NAME VARCHAR(20) NOT NULL,
+  PROD_PRICE INT NOT NULL);
+  
+  INSERT INTO ORDERS VALUES
+  (1,'SHAMPOO',200),
+  (2,'RICE',500),
+  (3,'SOAP',250),
+  (4,'OIL',300),
+  (5,'PILLOW',600),
+  (6,'MUSHROOM',100);
+
+SELECT 
+    PROD_ID,
+    PROD_NAME,
+    PROD_PRICE,
+    
+    SUM(PROD_PRICE) OVER () AS total_price,
+    
+    MAX(PROD_PRICE) OVER () AS max_price,
+    
+    MIN(PROD_PRICE) OVER () AS min_price,
+
+    RANK() OVER (ORDER BY PROD_PRICE DESC) AS price_rank
+
+FROM ORDERS;
