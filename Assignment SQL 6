@@ -1,0 +1,122 @@
+1.Create 2 tables like Schools and Colleges. Both the table should have enrollment_id. Based on the enrollment_id match the student in a school can join that college.
+The table should be as follows:
+
+School Table:
+School Name, Student name, Enrollment ID
+
+College Table:
+College Name, Student name, Enrollment ID
+
+Now use all Join queries (INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL JOIN) based on Enrollment ID.
+
+create database Schools;
+use Schools;
+CREATE TABLE Schools (
+    school_name VARCHAR(100),
+    student_name VARCHAR(100),
+    enrollment_id INT PRIMARY KEY
+);
+
+CREATE TABLE Colleges (
+    college_name VARCHAR(100),
+    student_name VARCHAR(100),
+    enrollment_id INT PRIMARY KEY
+);
+
+INSERT INTO Schools VALUES
+('Green Valley School', 'Arun', 101),
+('Sun School', 'Bala', 102),
+('HVM School', 'Charan', 103),
+('ADPS School', 'Deepak', 104);
+
+INSERT INTO Colleges VALUES
+('ABC Engineering College', 'Arun', 101),
+('XYZ Arts College', 'Bala', 102),
+('National College', 'Eshan', 105),
+('City College', 'Farhan', 106);
+
+SELECT 
+    s.school_name,
+    s.student_name AS school_student,
+    c.college_name,
+    c.student_name AS college_student,
+    s.enrollment_id
+FROM Schools s
+INNER JOIN Colleges c
+ON s.enrollment_id = c.enrollment_id;
+
+SELECT 
+    s.school_name,
+    s.student_name AS school_student,
+    c.college_name,
+    c.student_name AS college_student,
+    s.enrollment_id
+FROM Schools s
+LEFT JOIN Colleges c
+ON s.enrollment_id = c.enrollment_id;
+
+SELECT 
+    s.school_name,
+    s.student_name AS school_student,
+    c.college_name,
+    c.student_name AS college_student,
+    s.enrollment_id
+FROM Schools s
+RIGHT JOIN Colleges c
+ON s.enrollment_id = c.enrollment_id;
+
+SELECT 
+    s.school_name,
+    s.student_name AS school_student,
+    c.college_name,
+    c.student_name AS college_student,
+    s.enrollment_id
+FROM Schools s
+LEFT JOIN Colleges c
+ON s.enrollment_id = c.enrollment_id
+UNION
+SELECT 
+    s.school_name,
+    s.student_name AS school_student,
+    c.college_name,
+    c.student_name AS college_student,
+    s.enrollment_id
+FROM Schools s
+RIGHT JOIN Colleges c
+ON s.enrollment_id = c.enrollment_id;
+
+2.Write a self join query for a table Products, where the product should have columns like Product ID, Product Name,Order ID.
+In the product name you can include some common name like powder,soap,washing liquid and map it with related product name
+
+The result should display like:
+
+Product Name        Category
+-------------------         ------------
+Medimix                     Soap
+Vim liquid                  Washing Liquid
+
+etc.,
+
+CREATE TABLE Products (
+    product_id INT PRIMARY KEY,
+    product_name VARCHAR(100),
+    order_id INT
+);
+
+INSERT INTO Products (product_id, product_name, order_id) VALUES
+(1, 'Medimix Soap', 101),
+(2, 'Dove Soap', 102),
+(3, 'Vim Liquid', 103),
+(4, 'Surf Washing Powder', 104),
+(5, 'Wheel Washing Powder', 105),
+(6, 'Pears Soap', 106);
+
+SELECT 
+    p1.product_name,
+    CASE
+        WHEN p1.product_name LIKE '%Soap%' THEN 'Soap'
+        WHEN p1.product_name LIKE '%Powder%' THEN 'Washing Powder'
+        WHEN p1.product_name LIKE '%Liquid%' THEN 'Washing Liquid'
+        ELSE 'Other'
+    END AS category
+FROM Products p1;
