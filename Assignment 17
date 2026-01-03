@@ -1,0 +1,54 @@
+1.Navigate to https://www.tutorialspoint.com/selenium/practice/webtables.php and print any one column data.
+package practiceselenium;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import java.util.List;
+
+public class PrintFirstNameColumn {
+    public static void main(String[] args) {
+        WebDriver driver = new ChromeDriver();
+      
+        driver.get("https://www.tutorialspoint.com/selenium/practice/webtables.php");
+        
+        List<WebElement> rows = driver.findElements(By.xpath("//table//tbody//tr"));
+        
+        System.out.println("First Name Column Data:");
+        
+        for (WebElement row : rows) {
+      
+            WebElement firstNameCell = row.findElement(By.xpath("./td[1]"));
+            
+            System.out.println(firstNameCell.getText());
+        }
+        
+    }
+}
+
+2.Navigate to https://www.tutorialspoint.com/selenium/practice/links.php and the website address of all the links present in the page.
+package practiceselenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import java.util.List;
+
+public class PrintAllLinks {
+    public static void main(String[] args) {
+       
+        WebDriver driver = new ChromeDriver();
+
+        driver.get("https://www.tutorialspoint.com/selenium/practice/links.php");
+
+        List<WebElement> allLinks = driver.findElements(By.tagName("a"));
+
+        System.out.println("All link URLs on the page:");
+
+        for (WebElement link : allLinks) {
+            String url = link.getAttribute("href");
+            System.out.println(url);
+        }
+    }
+}
