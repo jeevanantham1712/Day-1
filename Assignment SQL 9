@@ -1,0 +1,59 @@
+1. Write a procedure to get input parameter as student name and output from procedure as student mark.
+create database Student;
+use student;
+CREATE TABLE Students (
+    student_id INT PRIMARY KEY AUTO_INCREMENT,
+    student_name VARCHAR(50),
+    marks INT
+);
+INSERT INTO Students (student_name, marks) VALUES
+('Arun', 85),
+('Ravi', 78),
+('Meena', 92),
+('Suresh', 66);
+DELIMITER &&
+CREATE PROCEDURE STU_MARK(IN NAME VARCHAR(30),OUT MARK INT)
+BEGIN
+    SELECT MARKS INTO MARK 
+    FROM STUDENTS 
+    WHERE STUDENT_NAME = NAME;
+END &&
+DELIMITER ;
+
+CALL STU_MARK('Arun',@MARK);
+SELECT @MARK;
+
+2. Write a procedure with inout parameter, input with employeeid and output as salary. Both are in integer data type.
+
+create database employe;
+use employe;
+
+CREATE TABLE employe (
+    emp_id INT PRIMARY KEY,
+    emp_name VARCHAR(50),
+    salary INT
+);
+
+INSERT INTO employe VALUES
+(101, 'Arun', 30000),
+(102, 'Ravi', 40000),
+(103, 'Meena', 50000);
+
+DELIMITER $$
+CREATE PROCEDURE GetEmployeeSalary (INOUT emp_salary INT)
+BEGIN
+    SELECT salary
+    INTO emp_salary
+    FROM employe
+    WHERE emp_id = emp_salary;
+END $$
+DELIMITER ;
+
+SET @value = 102;  
+CALL GetEmployeeSalary(@value);
+SELECT @value AS Salary;
+
+
+
+
+
