@@ -35,4 +35,7 @@ public class HoverAndClick {
     }
 }
 
-2.
+2.Navigate to https://www.saucedemo.com/, copy "locked_out_user" from "Accepted usernames are:"
+and paste it into Username text field, same way copy and paste the password in Password field and click Login.
+
+
