@@ -1,0 +1,76 @@
+1.Navigate to https://www.saucedemo.com/, take screenshot if login fails (input with invalid credentials).
+import java.io.File;
+import java.io.IOException;
+
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Ssassignment {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		String path="C:\\Users\\jeeva\\eclipse-workspace\\selepractise\\screenshot\\ss1.png";
+		
+		String url="https://www.saucedemo.com/";
+		WebDriver driver=new ChromeDriver();
+		driver.get(url);
+		WebElement username =driver.findElement(By.id("user-name"));
+		WebElement password = driver.findElement(By.id("password"));
+		username.sendKeys("Username");
+		password.sendKeys("Password");
+		WebElement Lbutton = driver.findElement(By.id("login-button"));
+		Lbutton.click();
+		TakesScreenshot screenshot= (TakesScreenshot)driver;
+		File src = screenshot.getScreenshotAs(OutputType.FILE);
+		File destination = new File(path);
+		FileUtils.copyFile(src, destination);
+		driver.close();
+		
+		
+	}
+
+}
+2.Navigate to https://www.saucedemo.com/ and login with valid credentials, take element screenshot of any product image.
+
+	package selepractise;
+import java.io.File;
+import java.io.IOException;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.edge.EdgeDriver;
+public class Ssassignment2 {
+
+	public static void main(String[] args) throws IOException, Exception {
+		// TODO Auto-generated method stub
+String path="C:\\Users\\jeeva\\eclipse-workspace\\selepractise\\screenshot\\tshirt.png";
+		
+		
+		WebDriver driver= new EdgeDriver();
+		driver.get(" https://www.saucedemo.com/");
+		WebElement username =driver.findElement(By.id("user-name"));
+		WebElement password = driver.findElement(By.id("password"));
+		username.sendKeys("standard_user");
+		password.sendKeys("secret_sauce");
+		WebElement Lbutton = driver.findElement(By.id("login-button"));
+		Lbutton.click();
+		Thread.sleep(10000);
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("window.scrollBy(0,300)");
+		WebElement tshirt = driver.findElement(By.xpath("//img[@alt='Sauce Labs Bolt T-Shirt']"));
+		File src = tshirt.getScreenshotAs(OutputType.FILE);
+		File dest =new File(path);
+		FileUtils.copyFile(src, dest);
+		driver.close();
+
+	}
+
+}
