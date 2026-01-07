@@ -14,7 +14,7 @@ public class Ssassignment {
 
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
-		String path="C:\\Users\\jsofi\\eclipse-workspace\\selepractise\\screenshot\\ss1.png";
+		String path="C:\\Users\\jeeva\\eclipse-workspace\\selepractise\\screenshot\\ss1.png";
 		
 		String url="https://www.saucedemo.com/";
 		WebDriver driver=new ChromeDriver();
@@ -51,7 +51,7 @@ public class Ssassignment2 {
 
 	public static void main(String[] args) throws IOException, Exception {
 		// TODO Auto-generated method stub
-String path="C:\\Users\\jsofi\\eclipse-workspace\\selepractise\\screenshot\\tshirt.png";
+String path="C:\\Users\\jeeva\\eclipse-workspace\\selepractise\\screenshot\\tshirt.png";
 		
 		
 		WebDriver driver= new EdgeDriver();
