@@ -1,0 +1,43 @@
+1.What is functions in SQL? How it differs from Procedure?
+A Function in SQL is a database object that:
+    Performs a specific task or calculation
+    Returns a single value (or a table in some DBs)
+    Can be used inside SQL queries
+A Stored Procedure is a precompiled SQL block that: 
+    Performs one or more operations
+    Can return multiple values using OUT parameters
+    Cannot be used directly inside SELECT
+
+2. Write a sample function program in SQL to get the min price of a product from shopping.
+
+CREATE TABLE Shopping (
+    product_id INT PRIMARY KEY,
+    product_name VARCHAR(50),
+    price INT
+);
+INSERT INTO Shopping VALUES
+(1, 'Soap', 50),
+(2, 'Shampoo', 120),
+(3, 'Oil', 200),
+(4, 'Soap', 45),
+(5, 'Shampoo', 110);
+
+DELIMITER $$
+
+CREATE FUNCTION GetMinPrice(prod_name VARCHAR(50))
+RETURNS INT
+DETERMINISTIC
+BEGIN
+    DECLARE min_price INT;
+
+    SELECT MIN(price)
+    INTO min_price
+    FROM Shopping
+    WHERE product_name = prod_name;
+
+    RETURN min_price;
+END $$
+
+DELIMITER ;
+
+SELECT GetMinPrice('Soap') AS Minimum_Price;
