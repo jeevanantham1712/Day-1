@@ -1,0 +1,67 @@
+1.Write SQL statement for before insert trigger
+
+show databases;
+use employee;
+CREATE TABLE Employeeees (
+    employee_id INT PRIMARY KEY,
+    name VARCHAR(100),
+    salary INT
+);
+
+DELIMITER $$
+CREATE TRIGGER before_employee_insert
+BEFORE INSERT ON Employeeees
+FOR EACH ROW
+BEGIN
+   
+    IF NEW.salary < 0 THEN
+        SET NEW.salary = 0;
+    END IF;
+END $$
+DELIMITER ;
+
+INSERT INTO Employeeees (employee_id, name, salary)
+VALUES (202, 'Kumar', -5000);
+
+SELECT * FROM Employeeees WHERE employee_id = 202;
+
+2. write SQL statement for before delete trigger
+show databases;
+create database emp;
+use emp;
+CREATE TABLE Employees1 (
+    employee_id INT PRIMARY KEY,
+    name VARCHAR(100),
+    salary INT,
+    is_protected TINYINT DEFAULT 0  -- 1 = cannot be deleted
+);
+
+CREATE TABLE Employees_Audit (
+    audit_id INT AUTO_INCREMENT PRIMARY KEY,
+    employee_id INT,
+    name VARCHAR(100),
+    salary INT,
+    deleted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    deleted_by VARCHAR(100)  -- optional: user/session info
+);
+
+DELIMITER $$
+CREATE TRIGGER before_employee_delete
+BEFORE DELETE ON Employees1
+FOR EACH ROW
+BEGIN
+    
+    INSERT INTO Employees_Audit (employee_id, name, salary, deleted_by)
+    VALUES (OLD.employee_id, OLD.name, OLD.salary, USER());
+END $$
+    
+DELIMITER ;
+drop TRIGGER before_employee_delete;
+INSERT INTO Employees1 (employee_id, name, salary, is_protected) VALUES
+(301, 'Arun', 50000, 0),
+(302, 'Kumar', 60000, 1);  
+DELETE FROM Employees1 WHERE employee_id = 301;
+
+SELECT * FROM Employees_Audit WHERE employee_id = 301;
+
+DELETE FROM Employees1 WHERE employee_id = 302;
