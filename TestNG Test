@@ -1,0 +1,96 @@
+1.Suppose u have a condition like product page should be executed only when home page test case get passed.
+ Write a program using TestNG to attain the same. U can take any e-commerce site for this.
+package TestingSampleTestNG;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Test;
+
+public class AutomationTest {
+	
+	WebDriver driver;
+	
+	@Test
+	public void routetowebsite() {
+		driver = new ChromeDriver();
+		driver.get("https://automationteststore.com/");
+	}
+	
+	@Test(dependsOnMethods = {"routetowebsite"})
+	public void loginPage()
+	{
+		WebElement element = driver.findElement(By.xpath("//a[text()='Login or register']"));
+		element.click();
+	}
+	@Test(dependsOnMethods = {"loginPage"})
+	public void homepage() {
+		
+		WebElement element1 = driver.findElement(By.id("loginFrm_loginname"));
+		element1.sendKeys("Jeevanantham");
+		WebElement element2 = driver.findElement(By.id("loginFrm_password"));
+		element2.sendKeys("Jeeva@2001");
+		WebElement element3 = driver.findElement(By.xpath("//button[@title='Login']"));
+		element3.click();
+		
+	}
+	@Test(dependsOnMethods = {"routetowebsite","loginPage","homepage"})
+	public void productpage() {
+		
+		WebElement element4 = driver.findElement(By.xpath("//a[text()='Apparel & accessories']"));
+		element4.click();
+		System.out.println("Reached the Product Page");	
+	}
+}
+
+2. For the given below website, write test case for customer login
+   https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login
+Test Case No         Test Case                Test Condition                  Expected Result                    
+    1          Verify Customer Login      Select a valid customer     User should be successfully logged in
+              with Valid Credentials       name from the dropdown     and navigated to the Account page
+                                          click on login button.
+
+    2         Verify Customer Login       Dont select the customer    Error message shoub be displayed
+              Without Selecting a Name    name from the dropdown
+                                          click on login button.
+
+
+3. For the same given website, automate and Assert using TestNG
+package TestingSampleTestNG;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.annotations.Test;
+
+public class AutomationTest1 {
+	
+	WebDriver driver;
+	
+	@Test
+	public void route() {
+		driver = new ChromeDriver();
+		driver.get("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login");
+	}
+	
+	@Test(dependsOnMethods = {"route"})
+	public void loginpage() {
+		
+		WebElement login = driver.findElement(By.xpath("//button[@ng-click='customer()']"));
+		login.click();
+	}
+	@Test(dependsOnMethods = {"route","loginpage"})
+	public void nextpage() {
+		WebElement element = driver.findElement(By.id("userSelect"));
+		Select select = new Select(element);
+		select.selectByVisibleText("Harry Potter");
+		WebElement element1 = driver .findElement(By.xpath("//button[text()='Login']"));
+		element1.click();
+	}
+
+}
