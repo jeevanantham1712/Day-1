@@ -1,0 +1,23 @@
+1.Difference between smoke and sanity testing?
+
+Smoke Testing:
+Smoke testing checks whether the basic and critical functionalities of the application work after a new build, to decide if the build is stable for further testing.
+
+Sanity Testing:
+Sanity testing verifies a specific bug fix or change to ensure it works correctly before continuing with detailed testing.
+
+2. Difference between black box and white box testing?
+
+Black Box Testing:
+Black box testing checks the functionality of the application without knowing the internal code, focusing only on inputs and expected outputs.
+
+White Box Testing:
+White box testing checks the internal code, logic, and structure of the application to ensure all paths and conditions work correctly.
+
+3. Different Levels of Testing
+
+Different Levels of Testing:
+ Unit Testing: Tests individual units or components of the application to ensure they work correctly.
+ Integration Testing: Checks whether different modules work together properly.
+ System Testing: Tests the complete application as a whole against requirements.
+ User Acceptance Testing (UAT): Validates the application with end users to ensure it meets business needs.
