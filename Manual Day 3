@@ -1,0 +1,24 @@
+1.Differenent between Boundary value Analysis and Equivalence Partitioning:
+
+Boundary Value Analysis (BVA) focuses on Blackbox testing the edges of input ranges where errors are most likely.
+Equivalence Partitioning (EP) divides inputs into valid/invalid groups and  Blackbox tests representative values from each group. 
+Together, they reduce redundant test cases and improve coverage in black-box testing.
+Example:
+Suppose a system accepts [marks between 0 and 100]:
+Equivalence Partitioning (EP):
+  - Valid partition: 0–100 --- pick one value (e.g., 50).
+  - Invalid partitions: <0 (e.g., -5), >100 (e.g., 120).
+Boundary Value Analysis (BVA):
+  - Test values: -1, 0, 1, 99, 100, 101.
+ EP reduces the number of test cases, while BVA ensures edge conditions are thoroughly tested.
+
+
+2.What is state Transition Testing? in Which scenario we will be using this technique?
+
+State Transition Testing is a black-box testing technique used to verify how a system behaves when moving from one state to another based on inputs or events. 
+It is most useful in scenarios where the output depends not only on the current input but also on the system’s previous state, such as login systems, workflows, or transaction processes.
+ 
+Definition:  A test design technique that models the system as a finite state machine with defined states, transitions, and events.  
+State:  Represents the condition or mode of the system at a given time.  
+Transition: The movement from one state to another triggered by an event or input.  
+Objective: To ensure the system correctly handles **valid and invalid transitions**, covering both expected and unexpected behaviors.
