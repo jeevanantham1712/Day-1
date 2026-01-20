@@ -1,0 +1,46 @@
+1.Explain about Defect Life Cycle.
+Defect life cycle is the process that a defect follows from identification to closure. It includes stages like New, Assigned, Fixed, Retest, Verified, and Closed.
+
+2.What is Test Metrics? Explain with example.
+Test Metrics are numerical measurements used to evaluate the quality, progress, and effectiveness of testing activities.
+
+Test Case Execution Metrics:
+Measures how many test cases are executed.
+Example:
+Total test cases = 100
+Executed = 80
+Passed = 70
+Failed = 10
+
+Defect Density
+Measures number of defects in the application.
+Formula:
+Defect Density = Total Defects / Size of Software
+
+Example:
+Total defects = 40
+Modules = 10
+Defect Density = 4 defects per module
+
+Defect Leakage
+Defects missed in testing but found in production.
+Example:
+Defects found in testing = 90
+Found in production = 10
+
+Leakage = 10 defects
+
+Test Coverage
+Measures how much of the application is tested.
+Example:
+Requirements = 50
+Covered by test cases = 45
+Coverage = 90%
+
+Defect Rejection Rate
+Percentage of invalid defects.
+Example:
+Reported defects = 30
+Rejected defects = 5
+Rejection Rate = 16.6%
+
