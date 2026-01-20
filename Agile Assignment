@@ -1,0 +1,49 @@
+1.Benefits of Agile Testing:
+Early Bug Detection:
+Testing starts early, so defects are found and fixed quickly.
+Faster Delivery:
+Agile supports continuous testing, which helps deliver software faster.
+Better Quality:
+Frequent testing improves overall product quality.
+Continuous Customer Feedback:
+Regular feedback ensures the product meets customer needs.
+Flexible to Changes:
+Easy to handle requirement changes during development.
+Improved Team Communication:
+Developers, testers, and business teams work closely together.
+Reduced Risk:
+Frequent releases reduce project risk.
+
+2.Difference between SCRUM and KANBAN
+
+Aspects:
+In Scrum, planning occurs at the beginning of each sprint, with tasks committed to for the duration of the sprint.
+Kanban allows for continuous planning, enabling teams to adjust and introduce new tasks at any time.
+
+Roles:
+Scrum defines specific roles like Scrum Master, Product Owner, and Development Team with distinct responsibilities.
+Kanban is often less prescriptive about roles, allowing teams more autonomy and flexibility in how they collaborate.
+
+Columns:
+Scrum Boards typically have columns like "To Do," "In Progress," and "Done" to represent the workflow during a sprint.
+Kanban Boards may have various columns reflecting different stages of the workflow, providing a more detailed view of the work process.
+
+Iterations:
+Scrum works in fixed iterations (sprints), and changes are usually addressed at the beginning of a new sprint.
+Kanban operates with a continuous flow, enabling changes to be introduced at any time, promoting adaptability.
+
+Change Management:
+Changes are usually addressed at the start of a new sprint in Scrum.
+Kanban allows for changes to be introduced at any time, promoting adaptability.
+
+Time Structure:
+Scrum uses fixed-time sprints for task planning.
+Kanban doesn't have fixed time frames; it relies on continuous flow.
+
+Work in Progress (WIP):
+Scrum typically limits the work in progress by planning tasks within the sprint, avoiding excessive multitasking.
+Kanban often uses explicit WIP limits on columns to manage and control the flow of work, preventing overload and enhancing efficiency.
+
+Delivery Frequency:
+Scrum delivers increments of work at the end of each sprint, providing regular and predictable delivery milestones.
+Kanban promotes a continuous delivery approach, allowing for the release of work as soon as it is completed, providing more frequent and ongoing deliveries.
