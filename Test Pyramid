@@ -1,0 +1,32 @@
+1.Why test pyramid is important? Explain in detail.
+
+The Test Pyramid is a testing strategy that defines how many tests should be written at each level of the application.
+Early defect detection: The Test Pyramid helps identify bugs at the early stages of development by focusing more on unit and integration tests, which reduces the cost and effort required to fix issues later.
+Faster test execution: Since most tests are written at the lower levels, the overall execution time becomes faster and teams receive quick feedback on application quality.
+Reduced maintenance effort: UI automation tests are more fragile and require frequent updates, so having fewer UI tests helps reduce script maintenance and improves framework stability.
+Better test coverage: The Test Pyramid ensures that different layers of the application such as business logic, backend services, and user workflows are properly tested.
+
+2.What is Agile Test Quadrant? If i have to do Experience Based Testing, which test quadrant i need to choose and why?
+
+The Agile Test Quadrant is a framework that helps teams understand what types of testing should be performed in Agile projects and when they should be executed.
+It categorizes testing into four quadrants based on business focus, technical focus, and test purpose. The Agile Test Quadrant ensures that both functional 
+and non-functional aspects of the application are tested properly throughout the sprint lifecycle.
+
+Quadrant 1 (Q1) – Technology Facing, Support Team
+This quadrant focuses on unit testing and component testing. It includes developer-driven tests that validate business logic and code functionality.
+These tests are usually automated and executed early in development.
+Quadrant 2 (Q2) – Business Facing, Support Team
+This quadrant focuses on functional testing and acceptance testing. It includes test cases based on user stories, requirements, and business scenarios.
+These tests ensure that the system behaves according to business expectations.
+Quadrant 3 (Q3) – Business Facing, Critique Product
+This quadrant focuses on manual testing, exploratory testing, usability testing, and experience-based testing. It validates real user behavior and checks how the
+application performs from an end-user perspective.
+Quadrant 4 (Q4) – Technology Facing, Critique Product
+This quadrant focuses on performance testing, security testing, load testing, and reliability testing. These tests evaluate system quality 
+attributes such as scalability and stability.
+
+Why Quadrant 3?
+Experience Based Testing is performed to evaluate the application from a real user perspective by using tester knowledge, intuition, and domain experience.
+Quadrant 3 is business-facing and focuses on validating how users interact with the application, how usable the system is, and whether the application meets user
+expectations. Since Experience Based Testing includes activities like exploratory testing, usability testing, and user scenario validation, it naturally fits into 
+Q3 where the goal is to critique the product and improve customer experience.
