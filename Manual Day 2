@@ -1,0 +1,53 @@
+1.What are the different software models available?
+
+Software development models are structured approaches used to plan, design, develop, test, and deploy software applications.
+These models define how different phases of SDLC are organized and executed.
+
+1. Waterfall Model
+The Waterfall model is a sequential model where each phase is completed before moving to the next phase. 
+It follows a fixed flow such as requirement analysis, design, development, testing, deployment, and maintenance.
+It is easy to manage but not flexible for changing requirements.
+
+2. V-Model (Verification and Validation Model)
+The V-Model is an extension of the Waterfall model where testing activities are planned in parallel with development phases.
+Each development phase has a corresponding testing phase, which helps in early defect detection and better quality assurance.
+
+3. Agile Model
+The Agile model follows an iterative and incremental approach where the application is developed in small modules called sprints. 
+It supports frequent changes, continuous feedback, and faster delivery. Agile is widely used in modern software projects.
+
+4. Spiral Model
+The Spiral model combines iterative development and risk analysis. It focuses on identifying and reducing risks in each cycle.
+This model is suitable for large and high-risk projects.
+
+5. Incremental Model
+In the Incremental model, the software is developed and delivered in small functional parts. Each increment adds new features and improves the existing system.
+This allows early delivery of working software.
+
+6. Prototype Model
+The Prototype model involves creating a working prototype of the application to understand customer requirements clearly.
+User feedback is collected and the prototype is refined before actual development begins.
+
+7. RAD Model (Rapid Application Development)
+The RAD model focuses on fast development and quick delivery using reusable components and rapid prototyping.
+It is suitable for projects with tight deadlines.
+
+8. DevOps Model
+The DevOps model integrates development and operations teams to enable continuous integration, continuous testing, and continuous deployment.
+It improves collaboration and speeds up software delivery.
+
+2.What is Agile? Explain about different frameworks in Agile
+
+Agile is a software development methodology that follows an iterative and incremental approach where the application is developed in small cycles called sprints.
+Agile focuses on continuous customer feedback, fast delivery, collaboration between teams, and flexibility to handle changing requirements.
+
+1. Scrum Framework
+
+Scrum is the most widely used Agile framework. It divides work into time-boxed iterations called sprints, usually lasting 2 to 4 weeks.
+Scrum uses defined roles such as Product Owner, Scrum Master, and Development Team. It includes ceremonies like Sprint Planning, Daily Stand-up, Sprint Review,
+and Sprint Retrospective. Scrum focuses on fast delivery, transparency, and continuous improvement.
+
+2. Kanban Framework
+
+Kanban is a visual workflow management system that uses a Kanban board to track tasks in columns such as To Do, In Progress, and Done.
+Unlike Scrum, Kanban does not use fixed sprints and supports continuous delivery. It focuses on limiting work in progress and improving workflow efficiency.
