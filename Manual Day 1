@@ -1,0 +1,43 @@
+1. Expain about Principles of Testing
+Principles of Software Testing:
+
+Software testing follows seven fundamental principles that help testers improve test effectiveness and avoid common mistakes.
+These principles guide the testing process and ensure better software quality.
+
+1. Testing Shows the Presence of Defects
+Testing helps identify defects in the application, but it cannot prove that the software is completely free of bugs.
+It only shows that defects exist, not that the product is perfect.
+
+2. Exhaustive Testing is Impossible
+It is not possible to test every input combination and scenario. Therefore, testers focus on risk-based testing and prioritize critical functionalities.
+
+3. Early Testing Saves Time and Cost
+Testing should begin as early as possible in the development lifecycle. Early defect detection reduces rework, saves money, and prevents major issues in later stages.
+
+4. Defect Clustering
+Most defects are usually found in a small number of modules. This means certain parts of the application are more error-prone and require more testing focus.
+
+5. Pesticide Paradox
+If the same test cases are executed repeatedly, they stop finding new defects. Test cases must be reviewed and updated regularly to identify new issues.
+
+6. Testing is Context Dependent
+Testing approaches vary based on the type of application. For example, testing a banking application is different from testing a gaming application.
+
+7. Absence of Errors Fallacy
+Even if software has no known defects, it may still fail if it does not meet user requirements or business needs.
+A defect-free product is not useful if it does not satisfy customers.
+
+2.Difference about QA and Dev Testing
+
+Developer Testing is performed by developers to verify that individual components or modules of the application work correctly according to the technical requirements.
+It mainly focuses on checking the correctness of the code, logic, and functionality at the unit and integration level. 
+Developers usually write and execute unit tests and component tests during the development phase to detect defects early and ensure code quality.
+
+QA Testing, on the other hand, is performed by Quality Assurance testers to validate the overall application from a user and business perspective. 
+QA testing focuses on functional testing, usability testing, system testing, regression testing, and end-to-end validation. 
+The main goal of QA testing is to ensure that the application meets business requirements, works correctly in real-world scenarios, and provides a good user experience.
+
+3. Explain about STLC process.
+
+STLC stands for Software Testing Life Cycle. It is a systematic process followed by the testing team to ensure that the software application is tested in a 
+structured and efficient manner. STLC defines different testing phases, activities, and deliverables involved in testing.
