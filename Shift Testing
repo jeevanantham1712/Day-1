@@ -1,0 +1,28 @@
+ 1.What is the difference between Shift Left Testing and Shift Right Testing?
+
+Shift Left Testing means moving testing activities earlier in the software development lifecycle (SDLC).
+Testing starts during requirement and design phase instead of waiting until development is completed.
+
+Example:
+Reviewing requirements
+Writing test cases early
+Unit testing by developers
+Automation testing during development
+Goal:
+Find defects early and reduce cost.
+
+Shift Right Testing means testing after the application is deployed in the production environment.
+Focuses on real user behavior, monitoring, and performance.
+
+Example:
+Production monitoring
+User feedback analysis
+A/B testing
+Performance monitoring
+Error tracking
+Goal:
+Improve user experience and system reliability.
+
+2.Explain about continuous Testing.
+Continuous Testing is the process of executing automated tests continuously throughout the software development lifecycle to get fast feedback on quality and business risks.
+It is mainly used in DevOps and Agile environments.
