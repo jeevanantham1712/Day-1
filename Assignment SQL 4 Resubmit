@@ -46,10 +46,9 @@ INSERT INTO Shippings (product_name, category, price) VALUES
 ('Car Seat Cover', 'Automobile', 4500.00),
 ('Car Air Freshener', 'Automobile', 600.00);
 
-select count(product_name) from shippings;
+SELECT category, SUM(price) AS Total_Price
+FROM Shipping
+GROUP BY category;
 
-select avg(price) from shippings;
-
-select sum(price) from shippings;
 
 
