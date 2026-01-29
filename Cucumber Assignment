@@ -1,0 +1,67 @@
+Navigate to https://www.qa-practice.com/elements/textarea/single 
+Automate this using cucumber as per the "Requirements" given
+
+Feature: Text Area Form Submission
+  Scenario: Submit text using mandatory text area field
+    Given the user is on the text area form page
+    When the user enters text "This is a sample text" in the text area
+    And the user clicks the Submit button
+    Then the entered text should be displayed on the page
+
+package stepDefinitions;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.en.*;
+
+public class TextArea {
+
+    WebDriver driver;
+
+    @Before
+    public void setup() {
+        driver = new ChromeDriver();
+       
+    }
+
+    @Given("the user is on the text area form page")
+    public void the_user_is_on_the_text_area_form_page() {
+        driver.get("https://www.qa-practice.com/elements/textarea/single");
+    }
+
+    @When("the user enters text {string} in the text area")
+    public void the_user_enters_text_in_the_text_area(String text) {
+        WebElement textArea = driver.findElement(By.id("id_text_area"));
+        //textArea.clear();
+        textArea.sendKeys(text);
+    }
+
+    @When("the user clicks the Submit button")
+    public void the_user_clicks_the_submit_button() {
+        driver.findElement(By.xpath("//button[@type='submit']")).click();
+    }
+
+    @Then("the entered text should be displayed on the page")
+    public void the_entered_text_should_be_displayed_on_the_page() {
+        String displayedText =driver.findElement(By.id("result-text")).getText();
+
+        Assert.assertTrue(displayedText.contains("This is a sample text"), "Entered text is not displayed");
+    }
+
+    @After
+    public void tearDown() {
+        driver.quit();
+    }
+}
+
+Result:
+
+1 scenarios (1 failed)
+8 steps (6 passed, 1 skipped, 1 failed)
+0m 14.611s
